@@ -1,0 +1,21 @@
+<h2>Lista de productos</h2>
+
+<div *ngIf="products.length === 0">
+No hay productos registrados
+</div>
+
+<ul>
+
+  <li *ngFor="let producto of products">
+
+    {{ producto.name }}
+    -
+    {{ producto.price }}
+
+    <button (click)="eliminar(producto.id)">
+Eliminar
+</button>
+
+  </li>
+
+</ul>

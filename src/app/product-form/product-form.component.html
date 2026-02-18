@@ -1,0 +1,27 @@
+<h2>Agregar producto</h2>
+
+<input
+type="text"
+placeholder="Nombre"
+[(ngModel)]="nombreProducto">
+
+<br><br>
+
+<input
+type="number"
+placeholder="Precio"
+[(ngModel)]="precioProducto">
+
+<br><br>
+
+<button (click)="agregar()">
+Agregar
+</button>
+
+<div *ngIf="nombreProducto.trim() === ''">
+El nombre es obligatorio
+</div>
+
+<div *ngIf="precioProducto <= 0">
+El precio debe ser mayor a 0
+</div>

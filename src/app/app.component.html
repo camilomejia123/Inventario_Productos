@@ -1,0 +1,28 @@
+<h1>📦 Inventario Básico</h1>
+
+<!-- formulario -->
+<app-product-form
+(productCreated)="agregarProducto($event)">
+</app-product-form>
+
+<hr>
+
+<!-- lista -->
+<app-product-list
+[products]="productos"
+(productDeleted)="eliminarProducto($event)">
+</app-product-list>
+
+<hr>
+
+<h3>Total de productos: {{ productos.length }}</h3>
+
+<h3>Total acumulado: {{ calcularTotal() }}</h3>
+
+<div *ngIf="productos.length === 0">
+⚠ No hay productos registrados
+</div>
+
+<div *ngIf="calcularTotal() > 100000">
+🎉 ¡Gran inventario!
+</div>
